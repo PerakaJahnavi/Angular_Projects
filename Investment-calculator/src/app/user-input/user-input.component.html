@@ -1,0 +1,72 @@
+<form (ngSubmit)="onSubmit()">
+  <!-- <table>
+        <div class="input-group">
+            <tr>
+                <td>
+                    <label>INTITAL INVESTMENT</label>
+                    <input class="input-group" type="text" name="INTITAL INVESTMENT">
+                </td>
+                <td>
+                    <label>ANNUAL INVESTMENT</label>
+                    <input class="input-group" type="text" name="EXPECTED RETURNS">
+                </td>
+            </tr>
+        </div>
+        <div class="input-group">
+            <tr>
+                <td>
+                    <label>EXPECTED RETURNS</label>
+                    <input class="input-group" type="text" name="INTITAL INVESTMENT">
+                </td>
+                <td>
+                    <label>DURATION</label>
+                    <input class="input-group" type="text" name="EXPECTED RETURNS">
+                </td>
+            </tr>
+        </div>
+    </table>
+    <button>CALCULATE</button>    -->
+  <div class="input-group">
+    <p>
+      <label for="initial-investment">Initial Investment</label>
+      <input
+        id="initial-investment"
+        name="initial-investment"
+        type="number"
+        [(ngModel)]="initialInvestment"
+      />
+    </p>
+    <p>
+      <label for="annual-investment">Annual Investment</label>
+      <input
+        id="annual-investment"
+        name="annual-investment"
+        type="number"
+        [(ngModel)]="annualInvestment"
+      />
+    </p>
+  </div>
+  <div class="input-group">
+    <p>
+      <label for="expected-returns">Expected Returns</label>
+      <input
+        id="expected-returns"
+        name="expected-returns"
+        type="number"
+        [(ngModel)]="expectedReturn"
+      />
+    </p>
+    <p>
+      <label for="duration">Duration</label>
+      <input
+        id="duration"
+        name="duration"
+        type="number"
+        [(ngModel)]="duration"
+      />
+    </p>
+  </div>
+  <p>
+    <button>Calculate</button>
+  </p>
+</form>

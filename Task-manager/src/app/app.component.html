@@ -1,0 +1,52 @@
+<app-header/>
+<!-- <app-user/> -->
+<!-- <header>
+  <img src="assets/angular-logo.png" alt="The Angular logo: The letter 'A'" />
+  <h1>Let's get started!</h1>
+  <p>Time to learn all about Angular!</p>
+</header> -->
+<main>
+  <ul id="users">
+    <!-- <li>
+      <app-user [id]="users[0].id" [avatar]="users[0].avatar" [name]="users[0].name" (select)="onSelectHandler($event)"/>
+    </li>
+    <li>
+      <app-user [id]="users[1].id" [avatar]="users[1].avatar" [name]="users[1].name" (select)="onSelectHandler($event)"/>
+    </li>
+    <li>
+      <app-user [id]="users[2].id" [avatar]="users[2].avatar" [name]="users[2].name" (select)="onSelectHandler($event)"/>
+    </li>
+    <li>
+      <app-user [id]="users[3].id" [avatar]="users[3].avatar" [name]="users[3].name" (select)="onSelectHandler($event)"/>
+    </li> -->
+    <!-- <li>
+      <app-user [user]="users[0]" (select)="onSelectHandler($event)"/>
+    </li>
+    <li>
+      <app-user [user]="users[1]" (select)="onSelectHandler($event)"/>
+    </li>
+    <li>
+      <app-user [user]="users[2]" (select)="onSelectHandler($event)"/>
+    </li>
+    <li>
+      <app-user [user]="users[3]" (select)="onSelectHandler($event)"/>
+    </li> -->
+    @for(user of users; track user.id) {
+      <!-- <li *ngFor="let user of users"> -->
+      <li>
+        <app-user [user]="user" [selected] = "user.id === selectedUserId" (select)="onSelectHandler($event)"/>
+      </li>
+    }
+  </ul>
+
+  @if (selectedUser) {
+    <!-- <app-tasks *ngIf="selectedUser; else fallback" [name]="selectedUser!.name"/> -->
+    <app-tasks [id]="selectedUser.id" [name]="selectedUser.name"/>
+  } @else {
+    <!-- <ng-template #fallback>
+      <p id="fallback">Select a user to see their tasks!</p>
+    </ng-template> -->
+    <p id="fallback">Select a user to see their tasks!</p>
+  }
+  
+</main>
